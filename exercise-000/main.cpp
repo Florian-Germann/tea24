@@ -13,19 +13,9 @@ int main(int argc, char **argv) {
     fmt::print("Hello, {}!\n", tea::PROJECT_NAME);
 
     /* INSERT YOUR CODE HERE */
-
-    int x = 10;
-    int* p = &x;
-
-    fmt::print("{}\n",x);
-    fmt::print("{}\n",fmt::ptr(&x));
-
-    fmt::print("{}\n",*p);
-    fmt::print("{}\n",fmt::ptr(p));
-
-    *p = 42;
-    fmt::print("{}\n",x);
-    fmt::print("{}\n",*p);
+    double* d = new double(3.1415);
+    fmt::println("Wert: {}", *d);
+    delete d;
 
     return 0; /* exit gracefully*/
 }
