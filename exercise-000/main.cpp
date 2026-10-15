@@ -3,6 +3,16 @@
 
 #include "config.h"
 
+void changeValueByParameter(int value){
+    value = 10;
+    fmt::println("{}",value);
+
+}
+void changeValueByPointer(int* ptr){
+    *ptr = 77;
+    fmt::println("{}", *ptr);
+}
+
 int main(int argc, char **argv) {
 
     /**
@@ -13,15 +23,12 @@ int main(int argc, char **argv) {
     fmt::print("Hello, {}!\n", tea::PROJECT_NAME);
 
     /* INSERT YOUR CODE HERE */
-    double* d = new double(3.1415);
-    fmt::println("Wert: {}", *d);
-    delete d;
+    int value = 20;
+    changeValueByParameter(value);
+    fmt::println("{}",value);
+    changeValueByPointer(&value);
+    fmt::println("{}", value);
 
     return 0; /* exit gracefully*/
 }
 
-void changeValueByParameter(int value){
-    value = 10;
-    fmt::print("{}",value);
-
-}
