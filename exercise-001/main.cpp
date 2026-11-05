@@ -2,6 +2,11 @@
 #include <fmt/format.h>
 
 #include "config.h"
+#include "functions.h"
+
+
+const int globalConst = 5;
+
 
 int main(int argc, char **argv) {
 
@@ -13,6 +18,9 @@ int main(int argc, char **argv) {
     fmt::print("Hello, {}!\n", tea::PROJECT_NAME);
 
     /* INSERT YOUR CODE HERE */
+    int localVar = 1;
+    fmt::println("localVar hat den Wert {} und die Adresse {}", localVar, fmt::ptr(&localVar));
+    fmt::println("globalConst hat den Wert {} und die Adresse {}", globalConst, fmt::ptr(&globalConst));
 
     return 0; /* exit gracefully*/
 }
